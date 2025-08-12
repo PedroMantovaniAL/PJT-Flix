@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wdth@87.5&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color:dimgrey;
+    color: whitesmoke;
+}
+
+div.carousel-item div.card {
+    width: 900px !important;
+    margin: auto;
+}
+
+.hover-anim {
+    transition: transform 0.8s;
+}
+
+.hover-anim:hover {
+    transform: scale(1.05);
+}
+
+input.search {
+    min-width: 20vw;
+    width: auto;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.603);
+}
+
+div.card {
+    background-color: rgb(36, 82, 233);
+}
+
+.orange {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: darkorange;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.contrast {
+    background-color: rgba(58, 58, 58, 0.603);
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
