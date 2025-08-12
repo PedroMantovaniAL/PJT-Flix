@@ -21,6 +21,8 @@ div.carousel-item div.card {
 
 .hover-anim:hover {
     transform: scale(1.05);
+    background-color: black;
+    color: white;
 }
 
 input.search {
