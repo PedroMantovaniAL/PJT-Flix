@@ -1,13 +1,24 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wdth@87.5&display=swap');
 
+:root {
+    --main: #051133;
+    --contrast: #a4bbf8;
+    --complementary: #152550;
+    --text: whitesmoke;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color:dimgrey;
-    color: whitesmoke;
+    background-color:rgb(73, 73, 73);
+    color: var(--text);
+}
+
+.title {
+    animation: titleSlideEffect 1s ease-in-out 0s 1 normal forwards;
 }
 
 div.carousel-item div.card {
@@ -23,20 +34,31 @@ input.search {
     background-color: rgba(255, 255, 255, 0.603);
 }
 
-div.card {
-    background-color: rgb(42, 80, 207);
+.search-bar {
+    animation: searchSlideEffect 1s ease-in-out 0s 1 normal forwards;
 }
 
-.orange {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-color: darkorange;
-    color: black;
+div.card {
+    background-color: var(--complementary);
+    color: var(--text);
+}
+
+img {
+    border-radius: 5px;
+}
+
+.sugestions {
+    position: relative;
+    left: -50px;
+    font-weight: bold;
+    background-color: var(--contrast);
+    color: rgb(29, 29, 29);
     font-size: 1.5rem;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .contrast {
-    background-color: rgba(58, 58, 58, 0.603);
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
@@ -46,7 +68,58 @@ div.card {
 }
 
 .hover-anim:hover {
+    cursor: pointer;
+    width: 300px !important;
     transform: scale(1.05) translateY(-15px);
-    background-color: rgb(66, 66, 66);
-    color: white;
+    background-color: var(--main);
+}
+
+.carousel-hover-anim, .carousel-hover-anim img, .card-body {
+    transition: all 0.6s ease-in-out;
+}
+
+.carousel-hover-anim:hover {
+    background-color: var(--main);
+}
+
+.carousel-hover-anim:hover .card-body {
+    animation: textHoverEffect 0.6s ease-in-out 0s 1 normal forwards;
+}
+
+.carousel-hover-anim:hover img {
+    padding-right: 600px !important;
+    transform: scale(.8)
+}
+
+@keyframes textHoverEffect {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        position: absolute;
+        left: 50%;
+        bottom: 80%;
+    }
+}
+
+@keyframes titleSlideEffect {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-70%) translateY(15%);
+    }
+}
+
+@keyframes searchSlideEffect {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(70%) translateY(-170%);
+    }
 }
